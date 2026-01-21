@@ -1,0 +1,25 @@
+{
+    "name": "servecore/shadcn-blade",
+    "description": "ServeCore Preset for Laravel Shadcn Blade Components",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ServeCore Team",
+            "email": "dev@servecore.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ServeCore\\Ui\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ServeCore\\Ui\\ServeCoreServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
