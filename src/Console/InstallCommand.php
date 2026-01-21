@@ -26,10 +26,19 @@ class InstallCommand extends Command
         // 4. Install NPM Dependencies
         $this->updatePackageJson();
 
+        // 5. Update app.css
+        $this->updateAppCss();
+
         $this->info('ServeCore UI installed successfully.');
         $this->comment('Please run "npm install && npm run dev" to compile assets.');
     }
 
+    protected function updateAppCss()
+    {
+        (new Filesystem)->ensureDirectoryExists(resource_path('css'));
+        copy(__DIR__.'/../../stubs/resources/css/app.css', resource_path('css/app.css'));
+    }
+    
     protected function updateAppJs()
     {
         $appJsPath = resource_path('js/app.js');
