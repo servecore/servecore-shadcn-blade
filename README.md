@@ -77,6 +77,70 @@ Add the toggle button anywhere:
 </x-select>
 ```
 
+## Manual Setup (Optional)
+
+If you want to understand what the installer does, here's the manual setup:
+
+### 1. CSS Setup
+
+The installer copies `app.css` with Tailwind v4 configuration and ShadCN color variables:
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-background: 0 0% 100%;
+  --color-foreground: 222.2 84% 4.9%;
+  /* ... more variables */
+}
+
+.dark {
+  --color-background: 222.2 84% 4.9%;
+  --color-foreground: 210 40% 98%;
+  /* ... dark mode variables */
+}
+
+[x-cloak] {
+  display: none !important;
+}
+```
+
+### 2. JavaScript Setup
+
+The installer updates `resources/js/app.js` to include:
+
+```javascript
+import Alpine from 'alpinejs';
+import theme, { initializeTheme } from './theme';
+
+// Initialize theme before Alpine
+initializeTheme();
+
+// Register theme component
+Alpine.data('theme', theme);
+
+window.Alpine = Alpine;
+Alpine.start();
+```
+
+### 3. Vite Configuration
+
+Ensure your `vite.config.js` includes:
+
+```javascript
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true,
+        }),
+    ],
+});
+```
+
 ## Requirements
 
 - Laravel 11+
