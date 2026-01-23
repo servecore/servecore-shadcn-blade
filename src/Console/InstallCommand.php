@@ -70,7 +70,7 @@ class InstallCommand extends Command
         // Add Theme Import if missing
         if (! str_contains($content, "import theme, { initializeTheme } from './theme';")) {
             $code = <<<'JS'
-import './bootstrap';
+
 import Alpine from 'alpinejs';
 import collapse from '@alpinejs/collapse';
 
@@ -98,8 +98,8 @@ window.Alpine = Alpine;
 Alpine.start();
 JS;
 
-            // basic replacement
-            $content = str_replace("import './bootstrap';", $code, $content);
+            // Append after bootstrap
+            $content = str_replace("import './bootstrap';", "import './bootstrap';\n".$code, $content);
 
             file_put_contents($appJsPath, $content);
         }
