@@ -35,6 +35,9 @@ class InstallCommand extends Command
             copy(__DIR__.'/../../stubs/resources/views/test.blade.php', resource_path('views/servecore-test.blade.php'));
         }
 
+        // 7. Copy components stubs
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/resources/shadcn-stubs', resource_path('shadcn-stubs'));
+
         $this->info('ServeCore UI installed successfully.');
         $this->comment('Please run "npm install && npm run dev" to compile assets.');
         $this->comment('View the demo at: /servecore-test (you may need to add a route)');
