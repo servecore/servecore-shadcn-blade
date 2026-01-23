@@ -12,6 +12,9 @@ class ServeCoreServiceProvider extends ServiceProvider
         // Share theme variable globally
         \Illuminate\Support\Facades\View::share('theme', 'default');
 
+        // Register components
+        \Illuminate\Support\Facades\Blade::component('button', \ServeCore\Components\Button::class);
+
         if ($this->app->runningInConsole()) {
             $this->commands([
                 InstallCommand::class,
