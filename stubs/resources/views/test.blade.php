@@ -30,6 +30,78 @@
             </x-scroll-area.scroll-area>
         </section>
 
+        <!-- Batch 1: Badge -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Badge</h2>
+            <div class="flex gap-4">
+                <x-badge>Default</x-badge>
+                <x-badge variant="secondary">Secondary</x-badge>
+                <x-badge variant="destructive">Destructive</x-badge>
+                <x-badge variant="outline">Outline</x-badge>
+            </div>
+        </section>
+
+        <!-- Batch 1: Alert -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Alert</h2>
+            <x-alert>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><line x1="12" x2="12" y1="2" y2="19"/><line x1="12" x2="12" y1="22" y2="22.01"/></svg>
+                <div class="alert-title font-medium">Heads up!</div>
+                <div class="alert-description">You can add components to your app using the cli.</div>
+            </x-alert>
+            <x-alert variant="destructive">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+                <div class="alert-title font-medium">Error</div>
+                <div class="alert-description">Your session has expired. Please log in again.</div>
+            </x-alert>
+        </section>
+
+        <!-- Batch 1: Avatar -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Avatar</h2>
+            <div class="flex gap-4">
+                <x-avatar>
+                    <x-avatar-image src="https://github.com/shadcn.png" alt="@shadcn" />
+                    <x-avatar-fallback>CN</x-avatar-fallback>
+                </x-avatar>
+                <x-avatar>
+                    <x-avatar-image src="broken-link.jpg" alt="@shadcn" />
+                    <x-avatar-fallback>JD</x-avatar-fallback>
+                </x-avatar>
+            </div>
+        </section>
+
+        <!-- Batch 1: Skeleton -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Skeleton</h2>
+            <div class="flex items-center space-x-4">
+                <x-skeleton class="h-12 w-12 rounded-full" />
+                <div class="space-y-2">
+                    <x-skeleton class="h-4 w-[250px]" />
+                    <x-skeleton class="h-4 w-[200px]" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Batch 1: Separator -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Separator</h2>
+            <div>
+                <div class="space-y-1">
+                    <h4 class="text-sm font-medium leading-none">Radix Primitives</h4>
+                    <p class="text-sm text-muted-foreground">An open-source UI component library.</p>
+                </div>
+                <x-separator class="my-4" />
+                <div class="flex h-5 items-center space-x-4 text-sm">
+                    <div>Blog</div>
+                    <x-separator orientation="vertical" />
+                    <div>Docs</div>
+                    <x-separator orientation="vertical" />
+                    <div>Source</div>
+                </div>
+            </div>
+        </section>
+
         <!-- Toast -->
         <section class="space-y-4">
             <h2 class="text-2xl font-semibold">Toast</h2>
