@@ -19,12 +19,6 @@
         ]);
 @endphp
 
-@if ($asChild)
-    <x-compile-as-child :$slot :$attributes>
-        <x-radio-group-indicator />
-    </x-compile-as-child>
-@else
     <button {{ $attributes }}>
         <x-radio-group-indicator />
     </button>
-@endif
