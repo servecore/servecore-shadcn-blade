@@ -58,6 +58,15 @@ class InstallCommand extends Command
 
         $content = file_get_contents($appJsPath);
 
+        // Check if Alpine is already installed manually
+        if (str_contains($content, "import Alpine from 'alpinejs';") || str_contains($content, 'window.Alpine = Alpine;')) {
+            $this->warn("\n[Warning] Existing Alpine.js setup detected in app.js.");
+            $this->comment('We skipped modifying app.js to prevent breaking your configuration.');
+            $this->comment("Please manually add the ServeCore imports (theme, components) to your app.js.\n");
+
+            return;
+        }
+
         // Add Theme Import if missing
         if (! str_contains($content, "import theme, { initializeTheme } from './theme';")) {
             $code = <<<'JS'
@@ -88,9 +97,8 @@ Alpine.data('theme', theme);
 window.Alpine = Alpine;
 Alpine.start();
 JS;
-            
-            // basic replacement ensuring we don't duplicate if run multiple times
-            // For simplicity, we replace the default bootstrap import with our full block
+
+            // basic replacement
             $content = str_replace("import './bootstrap';", $code, $content);
 
             file_put_contents($appJsPath, $content);
