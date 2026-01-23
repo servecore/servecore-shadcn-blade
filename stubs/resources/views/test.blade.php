@@ -102,6 +102,58 @@
             </div>
         </section>
 
+        <!-- Batch 2: Input & Label -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Input & Label</h2>
+            <div class="grid w-full max-w-sm items-center gap-1.5">
+                <x-label for="email">Email</x-label>
+                <x-input type="email" id="email" placeholder="Email" />
+            </div>
+            <div class="grid w-full max-w-sm items-center gap-1.5">
+                <x-label for="disabled">Disabled</x-label>
+                <x-input disabled type="email" id="disabled" placeholder="Email" />
+            </div>
+        </section>
+
+        <!-- Batch 2: Textarea -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Textarea</h2>
+            <div class="grid w-full gap-1.5">
+                <x-label for="message">Your Message</x-label>
+                <x-textarea placeholder="Type your message here." id="message" />
+            </div>
+        </section>
+
+        <!-- Batch 2: Switch -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Switch</h2>
+            <div class="flex items-center space-x-2">
+                <x-switch id="airplane-mode" />
+                <x-label for="airplane-mode">Airplane Mode</x-label>
+            </div>
+            <div class="flex items-center space-x-2">
+                <x-switch id="disabled-switch" disabled checked />
+                <x-label for="disabled-switch">Disabled</x-label>
+            </div>
+        </section>
+
+        <!-- Batch 2: Checkbox -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-semibold">Checkbox</h2>
+            <div class="flex items-center space-x-2">
+                <x-checkbox id="terms" />
+                <x-label for="terms" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    Accept terms and conditions
+                </x-label>
+            </div>
+            <div class="flex items-center space-x-2">
+                <x-checkbox id="disabled-terms" disabled checked />
+                <x-label for="disabled-terms" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    Disabled checked
+                </x-label>
+            </div>
+        </section>
+
         <!-- Toast -->
         <section class="space-y-4">
             <h2 class="text-2xl font-semibold">Toast</h2>

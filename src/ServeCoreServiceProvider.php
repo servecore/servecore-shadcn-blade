@@ -21,6 +21,11 @@ class ServeCoreServiceProvider extends ServiceProvider
         \Illuminate\Support\Facades\Blade::component('avatar-fallback', \ServeCore\Components\AvatarFallback::class);
         \Illuminate\Support\Facades\Blade::component('skeleton', \ServeCore\Components\Skeleton::class);
         \Illuminate\Support\Facades\Blade::component('separator', \ServeCore\Components\Separator::class);
+        \Illuminate\Support\Facades\Blade::component('input', \ServeCore\Components\Input::class);
+        \Illuminate\Support\Facades\Blade::component('label', \ServeCore\Components\Label::class);
+        \Illuminate\Support\Facades\Blade::component('textarea', \ServeCore\Components\Textarea::class);
+        \Illuminate\Support\Facades\Blade::component('switch', \ServeCore\Components\SwitchToggle::class);
+        \Illuminate\Support\Facades\Blade::component('checkbox', \ServeCore\Components\Checkbox::class);
 
         if ($this->app->runningInConsole()) {
             $this->commands([
