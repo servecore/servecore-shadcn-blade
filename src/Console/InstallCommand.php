@@ -62,10 +62,10 @@ class InstallCommand extends Command
         if (! str_contains($content, "import theme, { initializeTheme } from './theme';")) {
             $content = str_replace(
                 "import './bootstrap';",
-                "import './bootstrap';\nimport theme, { initializeTheme } from './theme';",
+                "import './bootstrap';\nimport Alpine from 'alpinejs';\nimport theme, { initializeTheme } from './theme';",
                 $content
             );
-            $content .= "\ninitializeTheme();\nAlpine.data('theme', theme);";
+            $content .= "\ninitializeTheme();\n\nwindow.Alpine = Alpine;\nAlpine.data('theme', theme);\nAlpine.start();";
 
             file_put_contents($appJsPath, $content);
         }
@@ -73,7 +73,7 @@ class InstallCommand extends Command
 
     protected function updatePackageJson()
     {
-        $this->runCommands(['npm install embla-carousel embla-carousel-autoplay']);
+        $this->runCommands(['npm install alpinejs embla-carousel embla-carousel-autoplay']);
     }
 
     protected function runCommands($commands)
