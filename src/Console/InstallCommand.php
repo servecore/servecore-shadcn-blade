@@ -7,7 +7,7 @@ use Illuminate\Filesystem\Filesystem;
 
 class InstallCommand extends Command
 {
-    protected $signature = 'servecore:install';
+    protected $signature = 'servecore:install {--force : Overwrite existing files}';
 
     protected $description = 'Install the ServeCore UI preset (ShadCN + Alpine)';
 
