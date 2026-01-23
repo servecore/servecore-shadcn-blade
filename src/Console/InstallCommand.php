@@ -60,12 +60,38 @@ class InstallCommand extends Command
 
         // Add Theme Import if missing
         if (! str_contains($content, "import theme, { initializeTheme } from './theme';")) {
-            $content = str_replace(
-                "import './bootstrap';",
-                "import './bootstrap';\nimport Alpine from 'alpinejs';\nimport theme, { initializeTheme } from './theme';",
-                $content
-            );
-            $content .= "\ninitializeTheme();\n\nwindow.Alpine = Alpine;\nAlpine.data('theme', theme);\nAlpine.start();";
+            $code = <<<'JS'
+import './bootstrap';
+import Alpine from 'alpinejs';
+import collapse from '@alpinejs/collapse';
+
+Alpine.plugin(collapse);
+
+import accordion from './components/accordion';
+import avatar from './components/avatar';
+import carousel from './components/carousel';
+import checkbox from './components/checkbox';
+import collapsible from './components/collapsible';
+import radiogroup from './components/radio-group';
+import theme, { initializeTheme } from './theme';
+
+initializeTheme();
+
+Alpine.data('accordion', accordion);
+Alpine.data('avatar', avatar);
+Alpine.data('carousel', carousel);
+Alpine.data('checkbox', checkbox);
+Alpine.data('collapsible', collapsible);
+Alpine.data('radiogroup', radiogroup);
+Alpine.data('theme', theme);
+
+window.Alpine = Alpine;
+Alpine.start();
+JS;
+            
+            // basic replacement ensuring we don't duplicate if run multiple times
+            // For simplicity, we replace the default bootstrap import with our full block
+            $content = str_replace("import './bootstrap';", $code, $content);
 
             file_put_contents($appJsPath, $content);
         }
@@ -73,7 +99,7 @@ class InstallCommand extends Command
 
     protected function updatePackageJson()
     {
-        $this->runCommands(['npm install alpinejs embla-carousel embla-carousel-autoplay']);
+        $this->runCommands(['npm install alpinejs @alpinejs/collapse embla-carousel embla-carousel-autoplay']);
     }
 
     protected function runCommands($commands)
