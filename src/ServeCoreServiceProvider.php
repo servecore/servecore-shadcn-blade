@@ -14,6 +14,13 @@ class ServeCoreServiceProvider extends ServiceProvider
 
         // Register components
         \Illuminate\Support\Facades\Blade::component('button', \ServeCore\Components\Button::class);
+        \Illuminate\Support\Facades\Blade::component('badge', \ServeCore\Components\Badge::class);
+        \Illuminate\Support\Facades\Blade::component('alert', \ServeCore\Components\Alert::class);
+        \Illuminate\Support\Facades\Blade::component('avatar', \ServeCore\Components\Avatar::class);
+        \Illuminate\Support\Facades\Blade::component('avatar-image', \ServeCore\Components\AvatarImage::class);
+        \Illuminate\Support\Facades\Blade::component('avatar-fallback', \ServeCore\Components\AvatarFallback::class);
+        \Illuminate\Support\Facades\Blade::component('skeleton', \ServeCore\Components\Skeleton::class);
+        \Illuminate\Support\Facades\Blade::component('separator', \ServeCore\Components\Separator::class);
 
         if ($this->app->runningInConsole()) {
             $this->commands([
