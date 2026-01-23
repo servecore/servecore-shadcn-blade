@@ -1,9 +1,9 @@
 <?php
 
-namespace ServeCore\Ui;
+namespace ServeCore;
 
 use Illuminate\Support\ServiceProvider;
-use ServeCore\Ui\Console\InstallCommand;
+use ServeCore\Console\InstallCommand;
 
 class ServeCoreServiceProvider extends ServiceProvider
 {

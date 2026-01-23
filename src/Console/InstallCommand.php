@@ -1,6 +1,6 @@
 <?php
 
-namespace ServeCore\Ui\Console;
+namespace ServeCore\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
