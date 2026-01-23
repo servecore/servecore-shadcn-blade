@@ -1,3 +1,9 @@
+@props([
+    'variant' => 'default',
+    'size' => 'default',
+    'loading' => false,
+])
+
 @php
     /* @var Illuminate\View\ComponentAttributeBag $attributes */
     $attributes = $attributes->class([
