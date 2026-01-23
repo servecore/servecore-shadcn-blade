@@ -153,4 +153,4 @@ MIT
 
 ## Credits
 
-Built on top of [bjnstnkvc/shadcn-ui](https://github.com/bjnstnkvc/shadcn-ui) with enhancements by ServeCore Team.
+Built with love by ServeCore Team.

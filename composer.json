@@ -21,7 +21,5 @@
             ]
         }
     },
-    "require": {
-        "bjnstnkvc/shadcn-ui": "^1.1"
-    }
+    "require": {}
 }
