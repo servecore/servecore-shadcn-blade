@@ -4,11 +4,12 @@ A Laravel preset that installs beautiful, accessible Shadcn UI components built 
 
 ## Features
 
-- 🎨 **Pre-built Components**: Dialog, Select, Tabs, Progress, Button with loading states
+- 🎨 **33+ Pre-built Components**: Accordion, Alert, Avatar, Badge, Breadcrumb, Button, Card, Carousel, Checkbox, Collapsible, Dialog, Dropdown, Input, Label, Navbar, Pagination, Progress, Radio Group, Scroll Area, Select, Separator, Sheet, Sidebar, Skeleton, Switch, Table, Tabs, Textarea, Theme Toggle, Toast, Toggle, Tooltip, and more.
 - 🌙 **Dark Mode**: Flicker-free theme system (Light/Dark/System)
 - 🎯 **Zero Config**: One command installation
 - ⚡ **Alpine.js**: Lightweight reactivity
 - 🎭 **Tailwind CSS v4**: Modern styling engine
+- 🛠️ **Full Stubs**: Includes the complete `shadcn-stubs` directory for custom component generation.
 
 ## Installation
 
@@ -31,9 +32,11 @@ A Laravel preset that installs beautiful, accessible Shadcn UI components built 
 
 The preset copies the following to your Laravel project:
 
-- **Components**: `resources/views/components/` (Button, Dialog, Select, Tabs, Progress, Theme Toggle)
+- **Components**: `resources/views/components/` (Full suite of ShadCN components)
+- **Demo Page**: `resources/views/servecore-test.blade.php` (Usage examples)
+- **Stubs**: `resources/shadcn-stubs/` (Blueprints for generating components)
 - **JavaScript**: `resources/js/theme.js` and `resources/js/init-theme.js`
-- **Styles**: `resources/css/app.css` (Shadcn variables + Tailwind config)
+- **Styles**: `resources/css/app.css` (ShadCN variables + Tailwind config)
 - **Dependencies**: `embla-carousel` and `embla-carousel-autoplay`
 
 ## Usage
